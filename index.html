@@ -11,7 +11,7 @@
     <div id="set-height"></div>
 
     <video id="v0" tabindex="0", autobuffer preload>
-        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="self.mp4"></source>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' preload="auto" src="self.mp4"></source>
     </video>
     <script src="sticky.js"></script>
     <script>
@@ -23,9 +23,34 @@
             }
         })
 
+        // var video = document.getElementById("v0")
+        //
+        // var url = "self.mp4"
+        //
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("GET", url, true);
+        // xhr.responseType = "arraybuffer";
+        //
+        // xhr.onload = function(oEvent) {
+        //
+        //     var blob = new Blob([oEvent.target.response], {type: "video/mp4"});
+        //
+        //     video.src = URL.createObjectURL(blob);
+        // };
+        //
+        // xhr.onprogress = function(oEvent) {
+        //
+        //     if (oEvent.lengthComputable) {
+        //         var percentComplete = oEvent.loaded/oEvent.total;
+        //         // do something with this
+        //     }
+        // }
+        //
+        // xhr.send();
+
         var frameNumber = 0, // start video at frame 0
         // lower numbers = faster playback
-        playbackConst = 1000,
+        playbackConst = 1300,
         // get page height from video duration
         setHeight = document.getElementById("set-height"),
         // select video element
