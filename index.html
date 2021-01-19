@@ -23,30 +23,30 @@
             }
         })
 
-        // var video = document.getElementById("v0")
-        //
-        // var url = "self.mp4"
-        //
-        // var xhr = new XMLHttpRequest();
-        // xhr.open("GET", url, true);
-        // xhr.responseType = "arraybuffer";
-        //
-        // xhr.onload = function(oEvent) {
-        //
-        //     var blob = new Blob([oEvent.target.response], {type: "video/mp4"});
-        //
-        //     video.src = URL.createObjectURL(blob);
-        // };
-        //
-        // xhr.onprogress = function(oEvent) {
-        //
-        //     if (oEvent.lengthComputable) {
-        //         var percentComplete = oEvent.loaded/oEvent.total;
-        //         // do something with this
-        //     }
-        // }
-        //
-        // xhr.send();
+        var video = document.getElementById("v0")
+
+        var url = "self.mp4"
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.responseType = "arraybuffer";
+
+        xhr.onload = function(oEvent) {
+
+            var blob = new Blob([oEvent.target.response], {type: "video/mp4"});
+
+            video.src = URL.createObjectURL(blob);
+        };
+
+        xhr.onprogress = function(oEvent) {
+
+            if (oEvent.lengthComputable) {
+                var percentComplete = oEvent.loaded/oEvent.total;
+                // do something with this
+            }
+        }
+
+        xhr.send();
 
         var frameNumber = 0, // start video at frame 0
         // lower numbers = faster playback
